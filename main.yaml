@@ -12,6 +12,12 @@
         - "{{ playbook_dir }}/config.yaml"
       tags: ["always"]
 
+    - name: Ensure necessary directories exist
+      block:
+        - import_tasks: tasks/dev-dirs.yaml
+        - import_tasks: tasks/xdg-dirs.yaml
+      tags: ["dirs"]
+
   roles:
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.mac.homebrew
@@ -34,9 +40,8 @@
       when: configure_sudoers
       tags: ["sudoers"]
 
-    - import_tasks: tasks/terminal.yaml
-      when: configure_terminal
-      tags: ["terminal"]
+    - import_tasks: tasks/gpg.yaml
+      tags: ["gpg"]
 
     - import_tasks: tasks/osx.yaml
       when: configure_osx

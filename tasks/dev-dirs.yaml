@@ -1,0 +1,11 @@
+- name: Ensure ~/SAPDevelop exists
+  file:
+    path: "$HOME/SAPDevelop"
+    state: directory
+    mode: "0755"
+
+- name: Ensure ~/src is a link to ~/SAPDevelop
+  file:
+    src: "$HOME/SAPDevelop"
+    dest: "$HOME/src"
+    state: link

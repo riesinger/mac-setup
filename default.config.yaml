@@ -2,7 +2,6 @@
 downloads: ~/.cache/ansible-downloads/
 
 configure_dotfiles: true
-configure_terminal: true
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
@@ -11,18 +10,22 @@ dockitems_remove:
   - Launchpad
   - Music
   - Musik
-  - Facetime
+  - FaceTime
   - Messages
   - Nachrichten
   - Photos
   - Fotos
   - TV
+  - Kontakte
+  - Contacts
+  - Maps
+  - Karten
   - Podcasts
+  - Reminders
+  - Erinnerungen
   - "App Store"
+  - "Apple@SAP"
 dockitems_persist:
-  - name: "Finder"
-    path: "/Applications/Finder.app"
-    pos: 0
   - name: "Safari"
     path: "/Applications/Safari.app"
     pos: 1
@@ -49,7 +52,7 @@ sudoers_custom_config: ""
 dotfiles_repo: https://github.com/riesinger/dotfiles.git
 dotfiles_repo_version: main
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/src/riesinger/dotfiles
 dotfiles_files:
   - .config/nvim
   - .config/starship.toml
@@ -94,7 +97,8 @@ homebrew_installed_packages:
   - wget
 
 # Note: you don't need to tap homebrew/core anymore!
-homebrew_taps: []
+homebrew_taps:
+  - homebrew/cask-fonts
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:

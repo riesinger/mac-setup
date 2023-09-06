@@ -1,0 +1,11 @@
+- name: Ensure {{ item }} exists
+  file:
+    path: "$HOME/{{ item }}"
+    state: directory
+    mode: "0755"
+    recurse: true
+  loop:
+    - .local/share
+    - .local/bin
+    - .config
+
