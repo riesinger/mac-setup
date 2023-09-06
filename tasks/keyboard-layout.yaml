@@ -1,0 +1,6 @@
+- name: Fetch keyboard layout from GitHub
+  ansible.builtin.get_url:
+    url: https://github.com/w1gz/osx-us-altgr-intl/raw/duplicate-under-escape-key/us-altgr-intl.keylayout
+    dest: /Library/Keyboard\ Layouts/us-altgr-intl.keylayout
+    checksum: sha256:ede96e9d85c0c22756128bb2af6c13bcbe3cfa0c27fcbb3e80efc36cb8a71ef6
+  become: true

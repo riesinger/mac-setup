@@ -1,0 +1,167 @@
+---
+downloads: ~/.cache/ansible-downloads/
+
+configure_dotfiles: true
+configure_terminal: true
+configure_osx: true
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: true
+dockitems_remove:
+  - Launchpad
+  - Music
+  - Musik
+  - Facetime
+  - Messages
+  - Nachrichten
+  - Photos
+  - Fotos
+  - TV
+  - Podcasts
+  - "App Store"
+dockitems_persist:
+  - name: "Finder"
+    path: "/Applications/Finder.app"
+    pos: 0
+  - name: "Safari"
+    path: "/Applications/Safari.app"
+    pos: 1
+  - name: "iTerm"
+    path: "/Applications/iTerm.app"
+    pos: 5
+  - name: "Visual Studio Code"
+    path: "/Applications/Visual Studio Code.app"
+    pos: 6
+  - name: "Spotify"
+    path: "/Applications/Spotify.app"
+    pos: 8
+# - name: "Sublime Text"
+#   path: "/Applications/Sublime Text.app/"
+#   pos: 5
+
+configure_sudoers: false
+sudoers_custom_config: ""
+# Example:
+# sudoers_custom_config: |
+#   # Allow users in admin group to use sudo with no password.
+#   %admin ALL=(ALL) NOPASSWD: ALL
+
+dotfiles_repo: https://github.com/riesinger/dotfiles.git
+dotfiles_repo_version: main
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_files:
+  - .config/nvim
+  - .config/starship.toml
+  - .config/tmux
+  - .config/zsh
+  - .gitconfig
+  - .profile
+  - .zshenv
+  - .local/bin/macos-setup.sh
+
+homebrew_installed_packages:
+  - ansible
+  - bat
+  - cloc
+  - colima
+  - coreutils
+  - curl
+  - docker
+  - fd
+  - fnm
+  - fzf
+  - gh
+  - git
+  - gnu-sed
+  - go
+  - gpg
+  - htop
+  - hyperfine
+  - iperf
+  - jq
+  - mas
+  - ncdu
+  - neovim
+  - openssl
+  - pv
+  - readline
+  - ripgrep
+  - ssh-copy-id
+  - starship
+  - tmux
+  - watch
+  - wget
+
+# Note: you don't need to tap homebrew/core anymore!
+homebrew_taps: []
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - 1password
+  - 1password-cli
+  - docker
+  - firefox
+  - font-caskaydia-cove-nerd-font
+  - iterm2
+  - kicad
+  - raycast
+  - spotify
+  - stats
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps:
+  - { id: 497799835, name: "Xcode" }
+  - { id: 1440147259, name: "AdGuard for Safari" }
+  - { id: 1099568401, name: "Home Assistant" }
+  - { id: 1519867270, name: "Refined GitHub" }
+  - { id: 409183694, name: Keynote" }
+  - { id: 1616822987, name: "Affinity Photo 2" }
+  - { id: 1444383602, name: "GoodNotes" }
+  - { id: 463362050, name: "PhotoSweeper" }
+  - { id: 803453959, name: "Slack" }
+  - { id: 409201541, name: "Pages" }
+  - { id: 1616831348, name: "Affinity Designer 2" }
+  - { id: 409203825, name: "Numbers" }
+  - { id: 1475387142, name: "Tailscale" }
+mas_email: ""
+mas_password: ""
+
+osx_script: "~/.local/bin/macos-setup.sh --no-restart"
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+npm_packages: []
+# - name: webpack
+#   state: present # present/absent/latest, default: present
+#   version: "^2.6" # default: N/A
+pip_packages: []
+# - name: mkdocs
+#   state: present # present/absent/latest, default: present
+#   version: "0.16.3" # default: N/A
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
+
+configure_iterm2: true
+iterm2_defaults:
+  - key: HapticFeedbackForEsc
+    type: int
+    value: 0
+  - key: OnlyWhenMoreTabs
+    type: int
+    value: 0
+  - key: PromptOnQuit
+    type: int
+    value: 0
+  - key: SoundForEsc
+    type: int
+    value: 0
+  - key: TabStyleWithAutomaticOption
+    type: int
+    value: 5 # This sets the 'minimal' appearance option
+  - key: SplitPaneDimmingAmount
+    type: float
+    value: 0.3
+# TODO: Set up the color scheme and font (basically the profile)
