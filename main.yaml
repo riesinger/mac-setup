@@ -13,10 +13,10 @@
       tags: ["always"]
 
     - name: Ensure necessary directories exist
+      tags: ["dirs"]
       block:
         - import_tasks: tasks/dev-dirs.yaml
         - import_tasks: tasks/xdg-dirs.yaml
-      tags: ["dirs"]
 
   roles:
     - role: elliotweiser.osx-command-line-tools

@@ -5,6 +5,11 @@ rules:
   line-length:
     max: 180
     level: warning
+  braces: disable
+  comments: disable
+  empty-lines:
+    max-end: 1
 
 ignore: |
   .github/workflows/stale.yml
+  roles/elliotweiser

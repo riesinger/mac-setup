@@ -1,6 +1,6 @@
+---
 - name: Ensure that a .gnupg directory exists in the home directory
   file:
     name: "$HOME/.gnupg"
     state: directory
     mode: "0744"
-

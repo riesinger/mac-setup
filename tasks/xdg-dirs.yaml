@@ -1,3 +1,4 @@
+---
 - name: Ensure {{ item }} exists
   file:
     path: "$HOME/{{ item }}"
@@ -8,4 +9,3 @@
     - .local/share
     - .local/bin
     - .config
-
