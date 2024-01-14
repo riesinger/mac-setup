@@ -1,0 +1,19 @@
+---
+- name: Ensure that the dotfiles repo is cloned
+  ansible.builtin.git:
+    clone: true
+    accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
+    dest: "{{ dotfiles_repo_local_destination }}"
+    recursive: true
+    repo: "{{ dotfiles_repo }}"
+    version: "{{ dotfiles_repo_version }}"
+    force: false
+  register: repo
+  environment:
+    GIT_TERMINAL_PROMPT: 0 # Instead of hanging, return 'terminal prompts disabled' when no password is given
+
+- name: Run the install script if the version changed
+  ansible.builtin.shell:
+    cmd: "{{ dotfiles_repo_local_destination }}/{{ dotfiles_install_script }}"
+    chdir: "{{ dotfiles_repo_local_destination }}"
+  when: repo.before != repo.after

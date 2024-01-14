@@ -52,16 +52,9 @@ sudoers_custom_config: ""
 dotfiles_repo: https://github.com/riesinger/dotfiles.git
 dotfiles_repo_version: main
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/src/riesinger/dotfiles
-dotfiles_files:
-  - .config/nvim
-  - .config/starship.toml
-  - .config/tmux
-  - .config/zsh
-  - .gitconfig
-  - .profile
-  - .zshenv
-  - .local/bin/macos-setup.sh
+dotfiles_repo_local_destination: ~/src/dotfiles
+# Relative to the repo root
+dotfiles_install_script: install.sh
 
 homebrew_installed_packages:
   - ansible
