@@ -1,11 +1,11 @@
 ---
-- name: Ensure {{ item }} exists
+- name: Ensure XDG directories exist
   file:
-    path: "$HOME/{{ item }}"
+    path: "{{ item }}"
     state: directory
     mode: "0755"
     recurse: true
   loop:
-    - .local/share
-    - .local/bin
-    - .config
+    - "{{ ansible_env.HOME }}/.local/share"
+    - "{{ ansible_env.HOME }}/.local/bin"
+    # - "{{ ansible_env.HOME }}/.config"
