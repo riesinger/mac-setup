@@ -59,11 +59,14 @@ dotfiles_install_script: install.sh
 homebrew_installed_packages:
   - ansible
   - bat
+  - bun
   - cloc
   - colima
   - coreutils
   - curl
   - docker
+  - dog
+  - exa
   - fd
   - fnm
   - fzf
@@ -83,6 +86,7 @@ homebrew_installed_packages:
   - pv
   - readline
   - ripgrep
+  - scc # A lines of code counter
   - ssh-copy-id
   - starship
   - tmux
@@ -100,10 +104,8 @@ homebrew_cask_apps:
   - 1password-cli
   - arc
   - docker
-  - firefox
   - font-caskaydia-cove-nerd-font
   - iterm2
-  - kicad
   - raycast
   - spotify
 
